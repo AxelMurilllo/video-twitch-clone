@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <Button size = "lg">
-      Click me
-    </Button>
+    <p>
+      Only authenticated users can see this page. 
+    </p>
   );
 }
