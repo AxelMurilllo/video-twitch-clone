@@ -22,10 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // update clerk provider tags
     <ClerkProvider>
       <html lang='en'>
         <body className={inter.className}>{children}</body>
       </html>
     </ClerkProvider>
   )
+
 }
