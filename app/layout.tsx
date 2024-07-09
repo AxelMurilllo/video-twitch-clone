@@ -5,9 +5,11 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs'
+import { dark } from '@clerk/themes';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from './(auth)/_components/theme-provider';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,9 +24,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{ baseTheme: dark}}>
       <html lang='en'>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <ThemeProvider
+            attribute = "class"
+            forcedTheme='dark'
+            storageKey='home-stream-theme'
+          > 
+          {children}
+          </ThemeProvider>
+          </body>
       </html>
     </ClerkProvider>
   )
