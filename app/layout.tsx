@@ -24,7 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+<<<<<<< HEAD
     <ClerkProvider appearance={{ baseTheme: dark}}>
+=======
+    // update clerk provider tags
+    <ClerkProvider>
+>>>>>>> f1bccfde9e6887b4a63512839b46edbf41d1ccbd
       <html lang='en'>
         <body className={inter.className}>
           <ThemeProvider
@@ -38,4 +43,5 @@ export default function RootLayout({
       </html>
     </ClerkProvider>
   )
+
 }
